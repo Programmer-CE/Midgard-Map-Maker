@@ -10,8 +10,6 @@ MapMaker::MapMaker(QWidget *parent) :
     ui(new Ui::MapMaker),path("")
 {
     ui->setupUi(this);
-    _helpOpen = false;
-    connect(&_dialog,SIGNAL(finished(int)),this,SLOT(closedHelpDialog()));
     if (ui->addTileset->isChecked())mouseAction = true;
     else mouseAction = false;
     if(ui->tierra->isChecked()) tilesetActive = false;
@@ -23,6 +21,14 @@ MapMaker::MapMaker(QWidget *parent) :
     setMaximumSize(ui->scrollAreaWidgetContents->minimumSize());
     _saveAsShortCut = new QShortcut(ui->actionGardarComo->shortcut(),this);
     connect(_saveAsShortCut,SIGNAL(activated()),ui->actionGardarComo,SLOT(trigger()));
+    _saveShortCut = new QShortcut(ui->actionGuardar->shortcut(),this);
+    connect(_saveShortCut,SIGNAL(activated()),ui->actionGuardar,SLOT(trigger()));
+    _newShortCut = new QShortcut(ui->actionNuevo->shortcut(),this);
+    connect(_newShortCut,SIGNAL(activated()),ui->actionNuevo,SLOT(trigger()));
+    _openShortCut = new QShortcut(ui->actionAbrir->shortcut(),this);
+    connect(_openShortCut,SIGNAL(activated()),ui->actionAbrir,SLOT(trigger()));
+    _helpShortCut = new QShortcut(ui->actionAyuda->shortcut(),this);
+    connect(_helpShortCut,SIGNAL(activated()),ui->actionAyuda,SLOT(trigger()));
 }
 
 bool MapMaker::getMouseAction()
@@ -45,25 +51,12 @@ MapMaker::~MapMaker()
     delete ui;
 }
 
-void MapMaker::on_actionManual_de_uso_triggered()
-{
-    if (!_helpOpen){
-        _helpOpen = true;
-        _dialog.show();
-    }
-}
 
 void MapMaker::closeEvent(QCloseEvent *e)
 {
     ui->widget->unactivateUpdater();
     QWidget::closeEvent(e);
 }
-
-void MapMaker::closedHelpDialog()
-{
-    _helpOpen = false;
-}
-
 void MapMaker::setActiveTileSet()
 {
     if(ui->tierra->isChecked()) tilesetActive = false;
@@ -126,7 +119,8 @@ void MapMaker::loadData()
     setMaximumSize(ui->scrollAreaWidgetContents->minimumSize());
 }
 
-void MapMaker::on_printbutton_clicked()
+void MapMaker::on_actionAyuda_triggered()
 {
-    ui->widget->printMatrix();
+    QMessageBox help;
+    help.about(this,"Ayuda", "Este programa es un creador de mapas para el proyecto Midgard, consulte la documentacion en <a href=\"https://github.com/Programmer-CE/Midgard-Map-Maker\">Midgar Map Maker Project</a> ");
 }

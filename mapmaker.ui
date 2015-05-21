@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>630</width>
-    <height>515</height>
+    <height>524</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -54,13 +54,6 @@
         <attribute name="buttonGroup">
          <string notr="true">addOrQuit</string>
         </attribute>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="printbutton">
-        <property name="text">
-         <string>print</string>
-        </property>
        </widget>
       </item>
       <item>
@@ -244,7 +237,7 @@
     <property name="title">
      <string>Ayuda</string>
     </property>
-    <addaction name="actionManual_de_uso"/>
+    <addaction name="actionAyuda"/>
    </widget>
    <addaction name="menuArchivo"/>
    <addaction name="menuAyuda"/>
@@ -259,6 +252,7 @@
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
+   <addaction name="separator"/>
   </widget>
   <action name="actionAbrir">
    <property name="text">
@@ -287,12 +281,15 @@
     <enum>Qt::WidgetShortcut</enum>
    </property>
   </action>
-  <action name="actionManual_de_uso">
+  <action name="actionAyuda">
    <property name="text">
     <string>Manual de uso</string>
    </property>
    <property name="toolTip">
     <string extracomment="see the help">Manual de uso</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+H</string>
    </property>
   </action>
   <action name="actionNuevo">

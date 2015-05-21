@@ -1,0 +1,281 @@
+\hypertarget{class_terrain_painter}{\section{Terrain\-Painter Class Reference}
+\label{class_terrain_painter}\index{Terrain\-Painter@{Terrain\-Painter}}
+}
+
+
+Clase \hyperlink{class_terrain_painter}{Terrain\-Painter}, se encarga de pintar el mapa y gestionarlo asi como de guardarlo o cargar un mapa de un disco rigido.  
+
+
+
+
+{\ttfamily \#include $<$terrainpainter.\-h$>$}
+
+Inheritance diagram for Terrain\-Painter\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_terrain_painter}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_terrain_painter_a47946a56086bd611200820eb77ca3147}{Terrain\-Painter} (Q\-Widget $\ast$parent=0)
+\begin{DoxyCompactList}\small\item\em Es el contructor por defecto. \end{DoxyCompactList}\item 
+void \hyperlink{class_terrain_painter_a13d85e3171b965bd6e8f36fe1202e1c6}{set\-Map\-Maker} (\hyperlink{class_map_maker}{Map\-Maker} $\ast$p\-Map\-Maker)
+\begin{DoxyCompactList}\small\item\em Es el metodo que se encarga de setear el creador de mapas. \end{DoxyCompactList}\item 
+\hyperlink{class_updater}{Updater} $\ast$ \hyperlink{class_terrain_painter_a380f07447ee0f57907853d8e076d2b13}{updater} () const 
+\begin{DoxyCompactList}\small\item\em Es el qthread que se encarga llamar al metodo de pintado del mapa. \end{DoxyCompactList}\item 
+void \hyperlink{class_terrain_painter_adb52ca609c562dcfdfee84e844f7a32a}{set\-Updater} (\hyperlink{class_updater}{Updater} $\ast$\hyperlink{class_terrain_painter_a380f07447ee0f57907853d8e076d2b13}{updater})
+\begin{DoxyCompactList}\small\item\em Setea el qthread. \end{DoxyCompactList}\item 
+\hypertarget{class_terrain_painter_adb9dab4b8fe180bab8a722d7223a1048}{void \hyperlink{class_terrain_painter_adb9dab4b8fe180bab8a722d7223a1048}{unactivate\-Updater} ()}\label{class_terrain_painter_adb9dab4b8fe180bab8a722d7223a1048}
+
+\begin{DoxyCompactList}\small\item\em se encarga de desactivar el qthread \end{DoxyCompactList}\item 
+void \hyperlink{class_terrain_painter_a92d6e3c8f53f4f0a2ef6e896480d7080}{save\-Map} (Q\-String p\-Path, Q\-String p\-Name\-Of\-Map)
+\begin{DoxyCompactList}\small\item\em Se encarga de guardar el mapa en xml. \end{DoxyCompactList}\item 
+void \hyperlink{class_terrain_painter_aec8ab73fffb4c09518dab3544ce2812e}{load\-Map} (Q\-String p\-Path)
+\begin{DoxyCompactList}\small\item\em Se encarga de cargar un mapa, si el archivo es invalido se arrojara un dialogo que indique el problema con el archivo. \end{DoxyCompactList}\item 
+void \hyperlink{class_terrain_painter_aacd640eb9007ff64b3f82421f9bf57e6}{new\-Matrix} (int width, int height)
+\begin{DoxyCompactList}\small\item\em Crea una matriz nueva intercambiandola con la anterior. \end{DoxyCompactList}\item 
+\hypertarget{class_terrain_painter_addc5c0a796059d54c972b135228bb504}{virtual \hyperlink{class_terrain_painter_addc5c0a796059d54c972b135228bb504}{$\sim$\-Terrain\-Painter} ()}\label{class_terrain_painter_addc5c0a796059d54c972b135228bb504}
+
+\begin{DoxyCompactList}\small\item\em Es el destructor. \end{DoxyCompactList}\item 
+Q\-String \hyperlink{class_terrain_painter_ab7332903ffc7d966f34d033f42c29aee}{map\-Name} () const 
+\begin{DoxyCompactList}\small\item\em Retorna el nombre representativo del mapa. \end{DoxyCompactList}\item 
+void \hyperlink{class_terrain_painter_afb7f32fd9a50bb1f4845860bba8da920}{set\-Map\-Name} (const Q\-String \&\hyperlink{class_terrain_painter_ab7332903ffc7d966f34d033f42c29aee}{map\-Name})
+\begin{DoxyCompactList}\small\item\em Setea el nombre representativo del mapa. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_terrain_painter_a7d7e2b12bea08e85c6bae73fb6490fc1}{paint\-Event} (Q\-Paint\-Event $\ast$)
+\begin{DoxyCompactList}\small\item\em Se encarga de printar el mapa. \end{DoxyCompactList}\item 
+void \hyperlink{class_terrain_painter_ac9cd048e8cf4f027f72fbdfef1366587}{mouse\-Press\-Event} (Q\-Mouse\-Event $\ast$)
+\begin{DoxyCompactList}\small\item\em Se encarga de gestionar los eventos de mouse del tipo presionar. \end{DoxyCompactList}\item 
+void \hyperlink{class_terrain_painter_a27691132e68fc91464eb87b7572958ec}{mouse\-Release\-Event} (Q\-Mouse\-Event $\ast$)
+\begin{DoxyCompactList}\small\item\em Es el metodo que se encarga de gestionar los eventos de mouse del tipo soltar. \end{DoxyCompactList}\item 
+void \hyperlink{class_terrain_painter_aee20f0d6985434efc6a1b2c0d1af3fc0}{mouse\-Move\-Event} (Q\-Mouse\-Event $\ast$)
+\begin{DoxyCompactList}\small\item\em Es el metodo que se encarga de gestionar los eventos demouse del tipo mover. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Clase \hyperlink{class_terrain_painter}{Terrain\-Painter}, se encarga de pintar el mapa y gestionarlo asi como de guardarlo o cargar un mapa de un disco rigido. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_terrain_painter_a47946a56086bd611200820eb77ca3147}{\index{Terrain\-Painter@{Terrain\-Painter}!Terrain\-Painter@{Terrain\-Painter}}
+\index{Terrain\-Painter@{Terrain\-Painter}!TerrainPainter@{Terrain\-Painter}}
+\subsubsection[{Terrain\-Painter}]{\setlength{\rightskip}{0pt plus 5cm}Terrain\-Painter\-::\-Terrain\-Painter (
+\begin{DoxyParamCaption}
+\item[{Q\-Widget $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{class_terrain_painter_a47946a56086bd611200820eb77ca3147}
+
+
+Es el contructor por defecto. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_terrain_painter_aec8ab73fffb4c09518dab3544ce2812e}{\index{Terrain\-Painter@{Terrain\-Painter}!load\-Map@{load\-Map}}
+\index{load\-Map@{load\-Map}!TerrainPainter@{Terrain\-Painter}}
+\subsubsection[{load\-Map}]{\setlength{\rightskip}{0pt plus 5cm}void Terrain\-Painter\-::load\-Map (
+\begin{DoxyParamCaption}
+\item[{Q\-String}]{p\-Path}
+\end{DoxyParamCaption}
+)}}\label{class_terrain_painter_aec8ab73fffb4c09518dab3544ce2812e}
+
+
+Se encarga de cargar un mapa, si el archivo es invalido se arrojara un dialogo que indique el problema con el archivo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\-Path} & es la direccion del archivo a cargar \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_terrain_painter_ab7332903ffc7d966f34d033f42c29aee}{\index{Terrain\-Painter@{Terrain\-Painter}!map\-Name@{map\-Name}}
+\index{map\-Name@{map\-Name}!TerrainPainter@{Terrain\-Painter}}
+\subsubsection[{map\-Name}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String Terrain\-Painter\-::map\-Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_terrain_painter_ab7332903ffc7d966f34d033f42c29aee}
+
+
+Retorna el nombre representativo del mapa. 
+
+\begin{DoxyReturn}{Returns}
+El nombre representativo del mapa 
+\end{DoxyReturn}
+\hypertarget{class_terrain_painter_aee20f0d6985434efc6a1b2c0d1af3fc0}{\index{Terrain\-Painter@{Terrain\-Painter}!mouse\-Move\-Event@{mouse\-Move\-Event}}
+\index{mouse\-Move\-Event@{mouse\-Move\-Event}!TerrainPainter@{Terrain\-Painter}}
+\subsubsection[{mouse\-Move\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void Terrain\-Painter\-::mouse\-Move\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Mouse\-Event $\ast$}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_terrain_painter_aee20f0d6985434efc6a1b2c0d1af3fc0}
+
+
+Es el metodo que se encarga de gestionar los eventos demouse del tipo mover. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Mouse\-Event} & Es el evento \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_terrain_painter_ac9cd048e8cf4f027f72fbdfef1366587}{\index{Terrain\-Painter@{Terrain\-Painter}!mouse\-Press\-Event@{mouse\-Press\-Event}}
+\index{mouse\-Press\-Event@{mouse\-Press\-Event}!TerrainPainter@{Terrain\-Painter}}
+\subsubsection[{mouse\-Press\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void Terrain\-Painter\-::mouse\-Press\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Mouse\-Event $\ast$}]{m}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_terrain_painter_ac9cd048e8cf4f027f72fbdfef1366587}
+
+
+Se encarga de gestionar los eventos de mouse del tipo presionar. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Mouse\-Event} & Es el evento \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_terrain_painter_a27691132e68fc91464eb87b7572958ec}{\index{Terrain\-Painter@{Terrain\-Painter}!mouse\-Release\-Event@{mouse\-Release\-Event}}
+\index{mouse\-Release\-Event@{mouse\-Release\-Event}!TerrainPainter@{Terrain\-Painter}}
+\subsubsection[{mouse\-Release\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void Terrain\-Painter\-::mouse\-Release\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Mouse\-Event $\ast$}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_terrain_painter_a27691132e68fc91464eb87b7572958ec}
+
+
+Es el metodo que se encarga de gestionar los eventos de mouse del tipo soltar. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Mouse\-Event} & Es el evento \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_terrain_painter_aacd640eb9007ff64b3f82421f9bf57e6}{\index{Terrain\-Painter@{Terrain\-Painter}!new\-Matrix@{new\-Matrix}}
+\index{new\-Matrix@{new\-Matrix}!TerrainPainter@{Terrain\-Painter}}
+\subsubsection[{new\-Matrix}]{\setlength{\rightskip}{0pt plus 5cm}void Terrain\-Painter\-::new\-Matrix (
+\begin{DoxyParamCaption}
+\item[{int}]{width, }
+\item[{int}]{height}
+\end{DoxyParamCaption}
+)}}\label{class_terrain_painter_aacd640eb9007ff64b3f82421f9bf57e6}
+
+
+Crea una matriz nueva intercambiandola con la anterior. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & es la cantidad de columnas deseadas, cada columna representa un conjunto de celdas \\
+\hline
+{\em height} & es la cantidad filas deseadas, cada fila representa un conjunto de celdas \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_terrain_painter_a7d7e2b12bea08e85c6bae73fb6490fc1}{\index{Terrain\-Painter@{Terrain\-Painter}!paint\-Event@{paint\-Event}}
+\index{paint\-Event@{paint\-Event}!TerrainPainter@{Terrain\-Painter}}
+\subsubsection[{paint\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void Terrain\-Painter\-::paint\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Paint\-Event $\ast$}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_terrain_painter_a7d7e2b12bea08e85c6bae73fb6490fc1}
+
+
+Se encarga de printar el mapa. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_terrain_painter_a92d6e3c8f53f4f0a2ef6e896480d7080}{\index{Terrain\-Painter@{Terrain\-Painter}!save\-Map@{save\-Map}}
+\index{save\-Map@{save\-Map}!TerrainPainter@{Terrain\-Painter}}
+\subsubsection[{save\-Map}]{\setlength{\rightskip}{0pt plus 5cm}void Terrain\-Painter\-::save\-Map (
+\begin{DoxyParamCaption}
+\item[{Q\-String}]{p\-Path, }
+\item[{Q\-String}]{p\-Name\-Of\-Map}
+\end{DoxyParamCaption}
+)}}\label{class_terrain_painter_a92d6e3c8f53f4f0a2ef6e896480d7080}
+
+
+Se encarga de guardar el mapa en xml. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & es el nombre representativo del mapa \\
+\hline
+{\em p\-Path} & es la direccion en la que se guardara el mapa \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_terrain_painter_a13d85e3171b965bd6e8f36fe1202e1c6}{\index{Terrain\-Painter@{Terrain\-Painter}!set\-Map\-Maker@{set\-Map\-Maker}}
+\index{set\-Map\-Maker@{set\-Map\-Maker}!TerrainPainter@{Terrain\-Painter}}
+\subsubsection[{set\-Map\-Maker}]{\setlength{\rightskip}{0pt plus 5cm}void Terrain\-Painter\-::set\-Map\-Maker (
+\begin{DoxyParamCaption}
+\item[{{\bf Map\-Maker} $\ast$}]{p\-Map\-Maker}
+\end{DoxyParamCaption}
+)}}\label{class_terrain_painter_a13d85e3171b965bd6e8f36fe1202e1c6}
+
+
+Es el metodo que se encarga de setear el creador de mapas. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\-Map\-Maker} & Es el creado de mapa \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_terrain_painter_afb7f32fd9a50bb1f4845860bba8da920}{\index{Terrain\-Painter@{Terrain\-Painter}!set\-Map\-Name@{set\-Map\-Name}}
+\index{set\-Map\-Name@{set\-Map\-Name}!TerrainPainter@{Terrain\-Painter}}
+\subsubsection[{set\-Map\-Name}]{\setlength{\rightskip}{0pt plus 5cm}void Terrain\-Painter\-::set\-Map\-Name (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{map\-Name}
+\end{DoxyParamCaption}
+)}}\label{class_terrain_painter_afb7f32fd9a50bb1f4845860bba8da920}
+
+
+Setea el nombre representativo del mapa. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em map\-Name} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_terrain_painter_adb52ca609c562dcfdfee84e844f7a32a}{\index{Terrain\-Painter@{Terrain\-Painter}!set\-Updater@{set\-Updater}}
+\index{set\-Updater@{set\-Updater}!TerrainPainter@{Terrain\-Painter}}
+\subsubsection[{set\-Updater}]{\setlength{\rightskip}{0pt plus 5cm}void Terrain\-Painter\-::set\-Updater (
+\begin{DoxyParamCaption}
+\item[{{\bf Updater} $\ast$}]{updater}
+\end{DoxyParamCaption}
+)}}\label{class_terrain_painter_adb52ca609c562dcfdfee84e844f7a32a}
+
+
+Setea el qthread. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em updater} & es el qthread a utilizar \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_terrain_painter_a380f07447ee0f57907853d8e076d2b13}{\index{Terrain\-Painter@{Terrain\-Painter}!updater@{updater}}
+\index{updater@{updater}!TerrainPainter@{Terrain\-Painter}}
+\subsubsection[{updater}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Updater} $\ast$ Terrain\-Painter\-::updater (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_terrain_painter_a380f07447ee0f57907853d8e076d2b13}
+
+
+Es el qthread que se encarga llamar al metodo de pintado del mapa. 
+
+\begin{DoxyReturn}{Returns}
+el qthread que se encarga de actualizar 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/cristianfernando/\-Documentos/git/\-Midgard\-Map\-Maker/terrainpainter.\-h\item 
+/home/cristianfernando/\-Documentos/git/\-Midgard\-Map\-Maker/terrainpainter.\-cpp\end{DoxyCompactItemize}

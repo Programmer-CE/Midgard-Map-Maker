@@ -32,7 +32,7 @@ void TerrainPainter::unactivateUpdater()
     _updater = 0;
 }
 
-void TerrainPainter::saveMap(QString name,QString pNameOfMap)
+void TerrainPainter::saveMap(QString pPath,QString pNameOfMap)
 {
     QDomDocument qdd;
     QDomElement root = qdd.createElement("map");
@@ -55,7 +55,7 @@ void TerrainPainter::saveMap(QString name,QString pNameOfMap)
     }
 
 
-    QFile file(name);
+    QFile file(pPath);
     if (!file.open(QIODevice::WriteOnly | QIODevice::Text)){
 
     }
@@ -68,13 +68,14 @@ void TerrainPainter::saveMap(QString name,QString pNameOfMap)
 
 }
 
-void TerrainPainter::loadMap(QString name)
+void TerrainPainter::loadMap(QString pPath)
 {
     QMessageBox em;
-    QFile file(name);
+    QFile file(pPath);
     QFile filescheme(":/scheme/esquema.xsd");
     QXmlSchema schema;
     QDomDocument qdd;
+    QString nametmp;
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)){
         //em.showMessage("error, no se pudo abrir el archivo");
         em.about(_mapMaker,"Error", "El documento no pudo abrirse");
@@ -88,13 +89,13 @@ void TerrainPainter::loadMap(QString name)
             if ( schema.isValid() ) {
                 QXmlSchemaValidator validator( schema );
 
-                if ( validator.validate(QUrl(QString("file://").append(name)))) {
+                if ( validator.validate(QUrl(QString("file://").append(pPath)))) {
                     if (!qdd.setContent(&file)){
                         em.about(_mapMaker,"Error", "No se pudo llevar a cabo la operacion, vuelva a intentar.");
                     }
                     else{
                         QDomElement root = qdd.firstChildElement();
-                        _mapName = root.attributes().namedItem("name").nodeValue();
+                        nametmp = root.attributes().namedItem("name").nodeValue();
                         QString s;
                         QVariant qv;
                         QDomNodeList node = root.elementsByTagName("row");
@@ -128,6 +129,7 @@ void TerrainPainter::loadMap(QString name)
                             mutLocker.lock();
                             deleteMatrix(terrainMatrix,alto,ancho);
                             terrainMatrix = xmlMap;
+                            _mapName = nametmp;
                             ancho = width;
                             alto = height;
                             if (parent()){
@@ -142,7 +144,7 @@ void TerrainPainter::loadMap(QString name)
                     em.about(_mapMaker,"error", "Documento es invalido");
                 }
             } else {
-                em.about(_mapMaker,"error", "Error de programacion, el esquema montado es erroneo, reporte el error en la pagina ");
+                em.about(_mapMaker,"error", "Error de programacion, el esquema montado es erroneo, reporte el error en la pagina <a href=\"https://github.com/Programmer-CE/Midgard-Map-Maker/issues\"> Midgard Map Maker </a>");
             }
         }
     }
@@ -183,15 +185,6 @@ QString TerrainPainter::mapName() const
     return _mapName;
 }
 
-void TerrainPainter::printMatrix()
-{
-    for (int i = 0; i < ancho; i++){
-        for (int j=0;j<alto;j++){
-            std::cout << (terrainMatrix[i][j]?"1":"0");
-        }
-        std::cout << std::endl;
-    }
-}
 
 void TerrainPainter::setMapName(const QString &mapName)
 {

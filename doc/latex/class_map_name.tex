@@ -1,0 +1,100 @@
+\hypertarget{class_map_name}{\section{Map\-Name Class Reference}
+\label{class_map_name}\index{Map\-Name@{Map\-Name}}
+}
+
+
+Es un dialogo que se encarga de obtener el nombre del mapa esto es un nombre representativo para el controlardor servidores en el proyecto Midgard, este dialogo es arrojado cuando se guarda un archivo por primera vez.  
+
+
+
+
+{\ttfamily \#include $<$mapname.\-h$>$}
+
+Inheritance diagram for Map\-Name\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_map_name}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_map_name_a2d10ccd3853afeb9f30c2336eb138e04}{void \hyperlink{class_map_name_a2d10ccd3853afeb9f30c2336eb138e04}{accept} ()}\label{class_map_name_a2d10ccd3853afeb9f30c2336eb138e04}
+
+\begin{DoxyCompactList}\small\item\em se sobrescribe si no existe un nombre representativo para el mapa entonces se arroja un dialogo con un mensaje indicando que debe insertarse un nombre, se acepta el dialogo si se inserta un nombre \end{DoxyCompactList}\item 
+\hypertarget{class_map_name_afaa02200b9a312c6b7865fc19e6ec52f}{void \hyperlink{class_map_name_afaa02200b9a312c6b7865fc19e6ec52f}{reject} ()}\label{class_map_name_afaa02200b9a312c6b7865fc19e6ec52f}
+
+\begin{DoxyCompactList}\small\item\em no hace nada pues no se puede rechazar el dialogo, la unica forma de que el dialogo se \char`\"{}quite\char`\"{} es aceptandolo \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_map_name_a180dde809a405229689bfb7d84145701}{Map\-Name} (Q\-Widget $\ast$parent=0)
+\begin{DoxyCompactList}\small\item\em Es el constructor por defecto. \end{DoxyCompactList}\item 
+Q\-String \hyperlink{class_map_name_a0c7db97256abcc52b7e7321d0c86c67d}{name\-Of\-Map} () const 
+\begin{DoxyCompactList}\small\item\em Retorna el nombre representativo del mapa. \end{DoxyCompactList}\item 
+void \hyperlink{class_map_name_a74a823e51c1e47ee0e76abec43a3fd05}{set\-Name\-Of\-Map} (Q\-String p\-Name)
+\begin{DoxyCompactList}\small\item\em Setea el nombre del mapa. \end{DoxyCompactList}\item 
+\hypertarget{class_map_name_a341bb66bf5d06a9ff0a41ffa289893bb}{\hyperlink{class_map_name_a341bb66bf5d06a9ff0a41ffa289893bb}{$\sim$\-Map\-Name} ()}\label{class_map_name_a341bb66bf5d06a9ff0a41ffa289893bb}
+
+\begin{DoxyCompactList}\small\item\em Es el destructor, limpia la memoria. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Es un dialogo que se encarga de obtener el nombre del mapa esto es un nombre representativo para el controlardor servidores en el proyecto Midgard, este dialogo es arrojado cuando se guarda un archivo por primera vez. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_map_name_a180dde809a405229689bfb7d84145701}{\index{Map\-Name@{Map\-Name}!Map\-Name@{Map\-Name}}
+\index{Map\-Name@{Map\-Name}!MapName@{Map\-Name}}
+\subsubsection[{Map\-Name}]{\setlength{\rightskip}{0pt plus 5cm}Map\-Name\-::\-Map\-Name (
+\begin{DoxyParamCaption}
+\item[{Q\-Widget $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{class_map_name_a180dde809a405229689bfb7d84145701}
+
+
+Es el constructor por defecto. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_map_name_a0c7db97256abcc52b7e7321d0c86c67d}{\index{Map\-Name@{Map\-Name}!name\-Of\-Map@{name\-Of\-Map}}
+\index{name\-Of\-Map@{name\-Of\-Map}!MapName@{Map\-Name}}
+\subsubsection[{name\-Of\-Map}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String Map\-Name\-::name\-Of\-Map (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_map_name_a0c7db97256abcc52b7e7321d0c86c67d}
+
+
+Retorna el nombre representativo del mapa. 
+
+\begin{DoxyReturn}{Returns}
+el nombre representativo del mapa 
+\end{DoxyReturn}
+\hypertarget{class_map_name_a74a823e51c1e47ee0e76abec43a3fd05}{\index{Map\-Name@{Map\-Name}!set\-Name\-Of\-Map@{set\-Name\-Of\-Map}}
+\index{set\-Name\-Of\-Map@{set\-Name\-Of\-Map}!MapName@{Map\-Name}}
+\subsubsection[{set\-Name\-Of\-Map}]{\setlength{\rightskip}{0pt plus 5cm}void Map\-Name\-::set\-Name\-Of\-Map (
+\begin{DoxyParamCaption}
+\item[{Q\-String}]{p\-Name}
+\end{DoxyParamCaption}
+)}}\label{class_map_name_a74a823e51c1e47ee0e76abec43a3fd05}
+
+
+Setea el nombre del mapa. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\-Name} & es el nombre a setear \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/cristianfernando/\-Documentos/git/\-Midgard\-Map\-Maker/mapname.\-h\item 
+/home/cristianfernando/\-Documentos/git/\-Midgard\-Map\-Maker/mapname.\-cpp\end{DoxyCompactItemize}

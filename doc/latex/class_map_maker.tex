@@ -1,0 +1,157 @@
+\hypertarget{class_map_maker}{\section{Map\-Maker Class Reference}
+\label{class_map_maker}\index{Map\-Maker@{Map\-Maker}}
+}
+
+
+Clase \hyperlink{class_map_maker}{Map\-Maker} es la clase que actua con el usuario, es una ventana con algunos botones con los que se puede editar un mapa del programa Midgard, el proyecto Midgard se puede encontrar en el siguiente hipervinculo \hyperlink{}{https\-://github.\-com/\-Programmer-\/\-C\-E/\-Midgard-\/\-Project.} 
+
+
+
+
+{\ttfamily \#include $<$mapmaker.\-h$>$}
+
+Inheritance diagram for Map\-Maker\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_map_maker}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_map_maker_a9947055f482f31c770769b952e53bf67}{void \hyperlink{class_map_maker_a9947055f482f31c770769b952e53bf67}{set\-Active\-Tile\-Set} ()}\label{class_map_maker_a9947055f482f31c770769b952e53bf67}
+
+\begin{DoxyCompactList}\small\item\em Setea el tipo de celda a insertar depende de las opciones de radiobutton con las etiquetas tierra y bosque. \end{DoxyCompactList}\item 
+\hypertarget{class_map_maker_a9a8bba5beafacbb6432fc1d7013548fe}{void \hyperlink{class_map_maker_a9a8bba5beafacbb6432fc1d7013548fe}{change\-Mouse\-Action} ()}\label{class_map_maker_a9a8bba5beafacbb6432fc1d7013548fe}
+
+\begin{DoxyCompactList}\small\item\em Es la accion del mouse borra los elementos de bosque en las celdas del mapa. \end{DoxyCompactList}\item 
+\hypertarget{class_map_maker_a8e4f57b9449a8655c3edf8dd3f5c219d}{void \hyperlink{class_map_maker_a8e4f57b9449a8655c3edf8dd3f5c219d}{save\-Data} ()}\label{class_map_maker_a8e4f57b9449a8655c3edf8dd3f5c219d}
+
+\begin{DoxyCompactList}\small\item\em Arroja una ventana que solicita el nombre del mapa con la cual se quiere representar, luego arroja otra ventana de buscador de archivos con el cual se solicita la direccion a guardar del mapa si se selecciono una direccion de guardado se procede a guardar un xml en la direccion solicitada. No es necesario colocar la extension del archivo ya que esta se coloca automaticamente. El archivo guardado es un xml aun asi si el usuario no lo desea. \end{DoxyCompactList}\item 
+\hypertarget{class_map_maker_a6460a1ae322e8484240ddde66bc57144}{void \hyperlink{class_map_maker_a6460a1ae322e8484240ddde66bc57144}{simple\-Save\-Data} ()}\label{class_map_maker_a6460a1ae322e8484240ddde66bc57144}
+
+\begin{DoxyCompactList}\small\item\em Se encarga de guardar los cambios en el mismo archivo, se recomienda que se use el shortcut Alt+\-G. \end{DoxyCompactList}\item 
+void \hyperlink{class_map_maker_a79fd5a327db129f3876895aa1ef9dc24}{create\-New\-Map} ()
+\begin{DoxyCompactList}\small\item\em Se encarga de crear un nuevo mapa de un tamanio seleccionado. \end{DoxyCompactList}\item 
+\hypertarget{class_map_maker_a453e645083e5444d39ae6d52f6829e7d}{void \hyperlink{class_map_maker_a453e645083e5444d39ae6d52f6829e7d}{load\-Data} ()}\label{class_map_maker_a453e645083e5444d39ae6d52f6829e7d}
+
+\begin{DoxyCompactList}\small\item\em Se encarga de abrir un archivo xml si este sigue con el standar definido en el xml schema llamado esquema.\-xsd entonces el archivo es cargado a memoria de lo contrario el archivo no se abre y se arroja un dialogo con el respectivo texto. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_map_maker_a45cd33bb40e93ad7c96171240e87a7bd}{Map\-Maker} (Q\-Widget $\ast$parent=0)
+\begin{DoxyCompactList}\small\item\em Es el constructor inicializa un mapa por defecto de tamanio 64 celdas por 64 celdas. \end{DoxyCompactList}\item 
+bool \hyperlink{class_map_maker_ac56883ea2ed2c8d85824ba94f960a504}{get\-Mouse\-Action} ()
+\begin{DoxyCompactList}\small\item\em Obtiene la accion del mouse. \end{DoxyCompactList}\item 
+bool \hyperlink{class_map_maker_a35b3c5bae988e2dce39926ef6240ab10}{get\-Tile\-Set\-Active} ()
+\begin{DoxyCompactList}\small\item\em Retorna la bandera que indica que tipo de elemento desea insertarse. \end{DoxyCompactList}\item 
+\hyperlink{class_terrain_painter}{Terrain\-Painter} $\ast$ \hyperlink{class_map_maker_a6c01882f3158db7f771f12460bff31b1}{get\-Terrain\-Painter} ()
+\begin{DoxyCompactList}\small\item\em Obtiene objeto que se encarga de pintar el mapa. \end{DoxyCompactList}\item 
+\hypertarget{class_map_maker_a270d6592f31c8026c809501ff4f2c2b9}{\hyperlink{class_map_maker_a270d6592f31c8026c809501ff4f2c2b9}{$\sim$\-Map\-Maker} ()}\label{class_map_maker_a270d6592f31c8026c809501ff4f2c2b9}
+
+\begin{DoxyCompactList}\small\item\em Es el destructor y liberador de memoria. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_map_maker_a1dced69406f01f92ae06b7965c0b90bc}{close\-Event} (Q\-Close\-Event $\ast$p\-Close\-Event)
+\begin{DoxyCompactList}\small\item\em Es el evento que se encarga de cerrar el la ventana correctamente. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Clase \hyperlink{class_map_maker}{Map\-Maker} es la clase que actua con el usuario, es una ventana con algunos botones con los que se puede editar un mapa del programa Midgard, el proyecto Midgard se puede encontrar en el siguiente hipervinculo \hyperlink{}{https\-://github.\-com/\-Programmer-\/\-C\-E/\-Midgard-\/\-Project.}
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_map_maker_a45cd33bb40e93ad7c96171240e87a7bd}{\index{Map\-Maker@{Map\-Maker}!Map\-Maker@{Map\-Maker}}
+\index{Map\-Maker@{Map\-Maker}!MapMaker@{Map\-Maker}}
+\subsubsection[{Map\-Maker}]{\setlength{\rightskip}{0pt plus 5cm}Map\-Maker\-::\-Map\-Maker (
+\begin{DoxyParamCaption}
+\item[{Q\-Widget $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{class_map_maker_a45cd33bb40e93ad7c96171240e87a7bd}
+
+
+Es el constructor inicializa un mapa por defecto de tamanio 64 celdas por 64 celdas. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & es el complemtento en el que se ejecutara esta ventana \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_map_maker_a1dced69406f01f92ae06b7965c0b90bc}{\index{Map\-Maker@{Map\-Maker}!close\-Event@{close\-Event}}
+\index{close\-Event@{close\-Event}!MapMaker@{Map\-Maker}}
+\subsubsection[{close\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void Map\-Maker\-::close\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Close\-Event $\ast$}]{p\-Close\-Event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_map_maker_a1dced69406f01f92ae06b7965c0b90bc}
+
+
+Es el evento que se encarga de cerrar el la ventana correctamente. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\-Close\-Event} & Es el evento de cierre \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_map_maker_a79fd5a327db129f3876895aa1ef9dc24}{\index{Map\-Maker@{Map\-Maker}!create\-New\-Map@{create\-New\-Map}}
+\index{create\-New\-Map@{create\-New\-Map}!MapMaker@{Map\-Maker}}
+\subsubsection[{create\-New\-Map}]{\setlength{\rightskip}{0pt plus 5cm}void Map\-Maker\-::create\-New\-Map (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{class_map_maker_a79fd5a327db129f3876895aa1ef9dc24}
+
+
+Se encarga de crear un nuevo mapa de un tamanio seleccionado. 
+
+ui-\/$>$scroll\-Area-\/$>$set\-Maximum\-Size(ui-\/$>$widget-\/$>$minimum\-Size()); set\-Maximum\-Size(ui-\/$>$scroll\-Area\-Widget\-Contents-\/$>$minimum\-Size());\hypertarget{class_map_maker_ac56883ea2ed2c8d85824ba94f960a504}{\index{Map\-Maker@{Map\-Maker}!get\-Mouse\-Action@{get\-Mouse\-Action}}
+\index{get\-Mouse\-Action@{get\-Mouse\-Action}!MapMaker@{Map\-Maker}}
+\subsubsection[{get\-Mouse\-Action}]{\setlength{\rightskip}{0pt plus 5cm}bool Map\-Maker\-::get\-Mouse\-Action (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_map_maker_ac56883ea2ed2c8d85824ba94f960a504}
+
+
+Obtiene la accion del mouse. 
+
+\begin{DoxyReturn}{Returns}
+true si la accion es agregar, false si la accion es quitar 
+\end{DoxyReturn}
+\hypertarget{class_map_maker_a6c01882f3158db7f771f12460bff31b1}{\index{Map\-Maker@{Map\-Maker}!get\-Terrain\-Painter@{get\-Terrain\-Painter}}
+\index{get\-Terrain\-Painter@{get\-Terrain\-Painter}!MapMaker@{Map\-Maker}}
+\subsubsection[{get\-Terrain\-Painter}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Terrain\-Painter} $\ast$ Map\-Maker\-::get\-Terrain\-Painter (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_map_maker_a6c01882f3158db7f771f12460bff31b1}
+
+
+Obtiene objeto que se encarga de pintar el mapa. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_terrain_painter}{Terrain\-Painter} es el objeto que se encaga de pintar el mapa 
+\end{DoxyReturn}
+\hypertarget{class_map_maker_a35b3c5bae988e2dce39926ef6240ab10}{\index{Map\-Maker@{Map\-Maker}!get\-Tile\-Set\-Active@{get\-Tile\-Set\-Active}}
+\index{get\-Tile\-Set\-Active@{get\-Tile\-Set\-Active}!MapMaker@{Map\-Maker}}
+\subsubsection[{get\-Tile\-Set\-Active}]{\setlength{\rightskip}{0pt plus 5cm}bool Map\-Maker\-::get\-Tile\-Set\-Active (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_map_maker_a35b3c5bae988e2dce39926ef6240ab10}
+
+
+Retorna la bandera que indica que tipo de elemento desea insertarse. 
+
+\begin{DoxyReturn}{Returns}
+true si se desea insertar bosque, que es un obstaculo, y false si se desea insertar tierra o terreno que no es un obstaculo 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/cristianfernando/\-Documentos/git/\-Midgard\-Map\-Maker/mapmaker.\-h\item 
+/home/cristianfernando/\-Documentos/git/\-Midgard\-Map\-Maker/mapmaker.\-cpp\end{DoxyCompactItemize}
