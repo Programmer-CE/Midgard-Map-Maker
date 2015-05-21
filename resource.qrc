@@ -1,0 +1,18 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>t.jpg</file>
+        <file>v.jpg</file>
+        <file>icons/anki.svg</file>
+        <file>icons/antimicro.svg</file>
+        <file>icons/aseprite.svg</file>
+        <file>icons/eagle.svg</file>
+        <file>icons/freedroid.svg</file>
+        <file>icons/lightsoff.svg</file>
+        <file>icons/linuxdcpp.svg</file>
+        <file>icons/minecraft.svg</file>
+        <file>icons/qutim.svg</file>
+    </qresource>
+    <qresource prefix="/scheme">
+        <file>esquema.xsd</file>
+    </qresource>
+</RCC>
