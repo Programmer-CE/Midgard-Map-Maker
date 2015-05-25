@@ -8,11 +8,11 @@
 #include <QtXml/QtXml>
 #include <QtXml/QDomDocument>
 #include <QtXml/QDomElement>
-#include <QScrollArea>
-#include <QDebug>
 #include <QtXmlPatterns/QXmlSchema>
 #include <QtXml/QXmlDTDHandler>
 #include <QtXmlPatterns/QXmlSchemaValidator>
+#include <QScrollArea>
+#include <QDebug>
 #include <QMessageBox>
 Updater *TerrainPainter::updater() const
 {
